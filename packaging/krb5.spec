@@ -36,6 +36,7 @@ Group:          Productivity/Networking/Security
 Source0:         krb5-%{version}.tar.bz2
 Source1:        baselibs.conf
 Source2:        krb5-rpmlintrc
+Source1001: 	krb5.manifest
 
 %description
 Kerberos V5 is a trusted-third-party network authentication system,
@@ -58,6 +59,7 @@ Include Files for Development
 
 %prep
 %setup -q -n %{srcRoot}
+cp %{SOURCE1001} .
 
 %build
 # needs to be re-generated
@@ -144,6 +146,7 @@ rm -rf %{buildroot}/usr/lib/mit/share/locale
 ########################################################
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root)
 /usr/bin/krb5-config
 %dir /usr/lib/mit
@@ -172,6 +175,7 @@ rm -rf %{buildroot}/usr/lib/mit/share/locale
 
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %dir %{krb5docdir}
 # add directories
