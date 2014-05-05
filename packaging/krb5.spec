@@ -68,6 +68,7 @@ cd src
 ./util/reconf
 CFLAGS="$RPM_OPT_FLAGS -I/usr/include/et -fno-strict-aliasing -D_GNU_SOURCE -fPIC " \
 ./configure \
+	--host=%{_host} --build=%{_build} \
 	--prefix=/usr/lib/mit \
 	--sysconfdir=%{_sysconfdir} \
 	--mandir=%{_mandir} \
