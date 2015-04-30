@@ -66,7 +66,7 @@ cp %{SOURCE1001} .
 rm -f src/lib/krb5/krb/deltat.c
 cd src
 ./util/reconf
-CFLAGS="$RPM_OPT_FLAGS -I/usr/include/et -fno-strict-aliasing -D_GNU_SOURCE -fPIC " \
+CFLAGS="$RPM_OPT_FLAGS -I/usr/include/et -fno-strict-aliasing -D_GNU_SOURCE -fPIC -fgnu89-inline " \
 ./configure \
 	--host=%{_host} --build=%{_build} \
 	--prefix=/usr/lib/mit \
